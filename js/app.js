@@ -44,7 +44,7 @@ const shuffle = (array) => {
 	}
 	return array;
 }
-  
+
 // setInterval event refernce variable
 let t = 0;
 
@@ -257,9 +257,9 @@ const enemyStartY= 100;
  */
 for(var i = 0; i < 6; i++){
 	/**
-	 * j variable keeps check at the enemy's Y axis position 
-	 * so as to generate enemy in the grey area only 
-	 */ 
+	 * j variable keeps check at the enemy's Y axis position
+	 * so as to generate enemy in the grey area only
+	 */
 	let j = (i > 2) ? (i - 3) : i;
 	const enemy = new Enemy(randomX(0,-4)*100, enemyStartY + (j*83), 'images/enemy-bug.png');
 	allEnemies.push(enemy);
@@ -351,9 +351,9 @@ const collectibles = shuffle([
  */
 for(let i = 0; i < collectibles.length; i++){
 	/**
-	 * z,j variables keeps check at the collectible's position 
-	 * so as to generate colletibles in the grey area only 
-	 */ 
+	 * z,j variables keeps check at the collectible's position
+	 * so as to generate colletibles in the grey area only
+	 */
 	let j = (i > 2) ? ((i - 3) > 2 ? (i - 6) : (i - 3)) : i;
 	let z = (i > 4) ? (i - 5) : i;
 	const gem = new Gem(gemStartX + z*100 , gemStartY + (j*83), collectibles[i]);
@@ -664,17 +664,17 @@ class Utils{
 			case 'win' :
 				// This gets triggered when player wins
 				modalBadgeDiv.firstElementChild.className = 'fa fa-trophy';
-				modalDialogueDiv.firstElementChild.textContent = 'Congradulations!! You Won!';
+				modalDialogueDiv.firstElementChild.textContent = 'Congradulations !!!';
 				break;
 			case 'collision' :
 				// This gets triggered when player collides with enemy
 				modalBadgeDiv.firstElementChild.className = 'fa fa-bug';
-				modalDialogueDiv.firstElementChild.textContent = 'Oh no!! You have been bitten by bug!';
+				modalDialogueDiv.firstElementChild.textContent = 'Out !!!';
 				break;
 			case 'timeup' :
 				// This gets triggered when the game's time's up.
 				modalBadgeDiv.firstElementChild.className = 'fa fa-thumbs-down';
-				modalDialogueDiv.firstElementChild.textContent = "Hey Buddy!! Your time's up!";
+				modalDialogueDiv.firstElementChild.textContent = "Time up!!!";
 				break;
 		};
 		view.modalPopupView.init();
